@@ -1,39 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#1e293b" />
-  <link rel="manifest" href="manifest.json" />
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <title>Arthur the Aardvark</title>
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('service-worker.js');
-      });
-    }
-  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles/style.css">
+  <title>StyleBuddy Dress Up Fun</title>
 </head>
-<body class="bg-slate-800 text-white flex flex-col items-center justify-center min-h-screen p-4">
-  <h1 class="text-3xl font-bold mb-2">Arthur the Aardvark</h1>
-  <p class="italic mb-4 text-center max-w-md">"Having fun isn't hard when you've got a library card!"</p>
-  <div class="relative w-64 h-96 bg-gray-700 rounded-xl shadow-xl overflow-hidden">
-    <img id="mannequin" src="images/arthur_base.png" alt="Arthur" class="absolute w-full h-full object-contain">
-    <img id="clothes" src="images/shirt_red.png" class="absolute w-full h-full object-contain" />
+<body>
+  <h1>StyleBuddy Dress Up Fun</h1>
+  <div id="mannequin-area">
+    <img id="base" src="images/base.png" alt="Base Character">
+    <img id="pants" class="overlay" src="" alt="Pants">
+    <img id="jacket" class="overlay" src="" alt="Jacket">
+    <img id="glasses" class="overlay" src="" alt="Glasses">
+    <img id="cap" class="overlay" src="" alt="Cap">
   </div>
-  <div class="mt-6 flex flex-wrap justify-center gap-3">
-    <button onclick="changeCostume('shirt_red')" class="bg-red-500 hover:bg-red-600 px-3 py-2 rounded-xl">Red Shirt</button>
-    <button onclick="changeCostume('shirt_blue')" class="bg-blue-500 hover:bg-blue-600 px-3 py-2 rounded-xl">Blue Shirt</button>
-    <button onclick="changeCostume('jeans')" class="bg-indigo-500 hover:bg-indigo-600 px-3 py-2 rounded-xl">Jeans</button>
-    <button onclick="changeCostume('jacket')" class="bg-yellow-500 hover:bg-yellow-600 text-black px-3 py-2 rounded-xl">Jacket</button>
+  <div id="clothing-options">
+    <button onclick="dress('pants', 'images/pants.png')">Pants</button>
+    <button onclick="dress('jacket', 'images/jacket.png')">Jacket</button>
+    <button onclick="dress('glasses', 'images/glasses.png')">Glasses</button>
+    <button onclick="dress('cap', 'images/cap.png')">Cap</button>
   </div>
-  <script>
-    function changeCostume(name) {
-      document.getElementById('clothes').src = `images/${name}.png`;
-      confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
-    }
-  </script>
+  <script src="scripts/app.js"></script>
 </body>
 </html>
