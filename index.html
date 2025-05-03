@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="styles/style.css">
-  <title>StyleBuddy Dress Up Fun</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>StyleBuddy</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="manifest" href="manifest.json" />
 </head>
 <body>
-  <h1>StyleBuddy Dress Up Fun</h1>
-  <div id="mannequin-area">
-    <img id="base" src="images/base.png" alt="Base Character">
-    <img id="pants" class="overlay" src="" alt="Pants">
-    <img id="jacket" class="overlay" src="" alt="Jacket">
-    <img id="glasses" class="overlay" src="" alt="Glasses">
-    <img id="cap" class="overlay" src="" alt="Cap">
+  <div id="app">
+    <div id="mannequin-area">
+      <img id="base" src="images/base.png" />
+      <img id="tshirt" src="images/tshirt.png" style="display:none" />
+      <img id="jeans" src="images/jeans.png" style="display:none" />
+      <img id="cap" src="images/cap.png" style="display:none" />
+      <img id="glasses" src="images/glasses.png" style="display:none" />
+    </div>
+    <div id="controls">
+      <button onclick="toggleItem('tshirt')">T-Shirt</button>
+      <button onclick="toggleItem('jeans')">Jeans</button>
+      <button onclick="toggleItem('cap')">Cap</button>
+      <button onclick="toggleItem('glasses')">Glasses</button>
+    </div>
+    <div id="quote"></div>
   </div>
-  <div id="clothing-options">
-    <button onclick="dress('pants', 'images/pants.png')">Pants</button>
-    <button onclick="dress('jacket', 'images/jacket.png')">Jacket</button>
-    <button onclick="dress('glasses', 'images/glasses.png')">Glasses</button>
-    <button onclick="dress('cap', 'images/cap.png')">Cap</button>
-  </div>
-  <script src="scripts/app.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>

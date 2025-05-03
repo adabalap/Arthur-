@@ -1,0 +1,6 @@
+body { font-family: sans-serif; text-align: center; }
+#app { max-width: 400px; margin: auto; position: relative; }
+#mannequin-area { position: relative; height: 500px; }
+#mannequin-area img { position: absolute; top: 0; left: 0; width: 100%; }
+#controls { margin-top: 520px; display: flex; flex-direction: column; }
+button { margin: 5px; }
