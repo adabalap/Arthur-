@@ -1,15 +1,13 @@
 const quotes = [
-  "Hey! That looks cool!",
-  "I love that outfit!",
   "Looking sharp!",
-  "Now that’s style!",
-  "Wow! Awesome choice!"
+  "That’s fresh!",
+  "Nice combo!",
+  "You nailed it!",
+  "Stylin' up!"
 ];
 
-function toggleItem(id) {
-  const item = document.getElementById(id);
-  item.style.display = item.style.display === 'none' ? 'block' : 'none';
-  document.getElementById('quote').innerText =
-    quotes[Math.floor(Math.random() * quotes.length)];
-  // Placeholder: add confetti animation logic here
+function toggle(item) {
+  const el = document.getElementById(item);
+  el.classList.toggle('hidden');
+  document.getElementById('quote').textContent = quotes[Math.floor(Math.random() * quotes.length)];
 }

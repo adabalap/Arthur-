@@ -4,26 +4,35 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>StyleBuddy</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="manifest" href="manifest.json" />
+  <link rel="manifest" href="manifest.json"/>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <div id="app">
-    <div id="mannequin-area">
-      <img id="base" src="images/base.png" />
-      <img id="tshirt" src="images/tshirt.png" style="display:none" />
-      <img id="jeans" src="images/jeans.png" style="display:none" />
-      <img id="cap" src="images/cap.png" style="display:none" />
-      <img id="glasses" src="images/glasses.png" style="display:none" />
+<body class="bg-gradient-to-br from-gray-100 to-gray-300 text-center p-4 min-h-screen">
+  <h1 class="text-4xl font-bold text-gray-800 mb-4">StyleBuddy</h1>
+  <div class="flex justify-center">
+    <div class="relative w-[400px] h-[500px]">
+      <img id="base" src="images/base.png" class="absolute top-0 left-0 w-full h-full" />
+      <img id="shirt" src="images/shirt.png" class="absolute top-0 left-0 w-full h-full hidden" />
+      <img id="jeans" src="images/jeans.png" class="absolute top-0 left-0 w-full h-full hidden" />
+      <img id="shoes" src="images/shoes.png" class="absolute top-0 left-0 w-full h-full hidden" />
+      <img id="glasses" src="images/glasses.png" class="absolute top-0 left-0 w-full h-full hidden" />
     </div>
-    <div id="controls">
-      <button onclick="toggleItem('tshirt')">T-Shirt</button>
-      <button onclick="toggleItem('jeans')">Jeans</button>
-      <button onclick="toggleItem('cap')">Cap</button>
-      <button onclick="toggleItem('glasses')">Glasses</button>
+    <div class="flex flex-col justify-center ml-4 gap-4">
+      <button onclick="toggle('shirt')" class="w-14 h-14 rounded-full border-2 border-yellow-400 bg-white">
+        <img src="images/shirt.png" alt="shirt" />
+      </button>
+      <button onclick="toggle('jeans')" class="w-14 h-14 rounded-full border-2 border-blue-400 bg-white">
+        <img src="images/jeans.png" alt="jeans" />
+      </button>
+      <button onclick="toggle('shoes')" class="w-14 h-14 rounded-full border-2 border-red-400 bg-white">
+        <img src="images/shoes.png" alt="shoes" />
+      </button>
+      <button onclick="toggle('glasses')" class="w-14 h-14 rounded-full border-2 border-blue-200 bg-white">
+        <img src="images/glasses.png" alt="glasses" />
+      </button>
     </div>
-    <div id="quote"></div>
   </div>
+  <p id="quote" class="mt-6 text-xl italic text-gray-700">Tap an icon to dress up!</p>
   <script src="app.js"></script>
 </body>
 </html>
